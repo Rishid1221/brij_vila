@@ -1,0 +1,967 @@
+/* ==========================================================================
+   Brij Vila Jaisalmer — About Us Page Styles
+   File: about.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Local Variables
+   -------------------------------------------------------------------------- */
+:root {
+  --gold: #9f875c;
+  --gold-light: #c5b388;
+  --gold-glow: rgba(159, 135, 92, 0.15);
+  --dark: #111111;
+  --dark-surface: #181818;
+  --text-dark: #2a2a2a;
+  --text-muted: #666666;
+  --text-light: #ececec;
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. Base Helpers
+   -------------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+
+  
+
+.about-hero, 
+section {
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+.story-images {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+.floating-img {
+  position: absolute;
+  bottom: -20px;
+  right: 0px;
+  width: 48%;
+  max-width: 260px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  overflow-x: hidden;
+}
+
+.text-center { 
+  text-align: center; 
+}
+
+.section-label {
+  color: var(--gold);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.main-img.video-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px; /* Match your main container border-radius */
+  width: 100%;
+  height: 100%;
+  min-height: 520px; /* Adjust according to your layout design */
+}
+
+.main-img.video-wrapper video {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+}
+
+/* ==========================================================================
+   Header & Navbar Styles
+   ========================================================================== *//* ===========================================================
+   NAVBAR (Same as Homepage)
+   =========================================================== */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:80px;
+    padding:0 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(17,17,17,.92);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(197,160,89,.18);
+    z-index:9999;
+}
+
+.navbar .nav-logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+}
+
+.navbar .nav-logo-img{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    object-fit:cover;
+    border:1px solid rgba(197,160,89,.35);
+    transition:.35s;
+}
+
+.navbar .nav-logo:hover .nav-logo-img{
+    transform:scale(1.05);
+}
+
+.navbar .logo-text-group{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    line-height:1.05;
+}
+
+.navbar .logo-main{
+    font-family:'Cinzel',serif;
+    font-size:1.35rem;
+    font-weight:600;
+    letter-spacing:2px;
+    color:#c5a059;
+    text-transform:uppercase;
+    white-space:nowrap;
+}
+
+.navbar .logo-sub{
+    font-family:'DM Sans',sans-serif;
+    font-size:.60rem;
+    letter-spacing:1.8px;
+    text-transform:uppercase;
+    color:rgba(255,255,255,.65);
+    margin-top:3px;
+    white-space:nowrap;
+}
+
+.navbar .nav-links{
+    display:flex;
+    align-items:center;
+    gap:32px;
+}
+
+.navbar .nav-links a{
+    text-decoration:none;
+    color:#ddd;
+    font-family:'Plus Jakarta Sans',sans-serif;
+    font-size:.9rem;
+    transition:.3s;
+}
+
+.navbar .nav-links a:hover,
+.navbar .nav-links a.active{
+    color:#c5a059;
+}
+
+.navbar .btn-primary{
+    padding:12px 24px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .navbar{
+        height:72px;
+        padding:0 20px;
+    }
+
+    .navbar .nav-logo-img{
+        width:42px;
+        height:42px;
+    }
+
+    .navbar .logo-main{
+        font-size:1.05rem;
+    }
+
+    .navbar .logo-sub{
+        font-size:.52rem;
+    }
+
+}
+
+/* Navbar Book Now Button */
+.navbar .btn-primary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 28px;
+    background:#9f875c;
+    color:#fff;
+    text-decoration:none;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-size:.82rem;
+    font-weight:600;
+    border:1px solid #9f875c;
+    border-radius:4px;
+    transition:all .35s ease;
+    white-space:nowrap;
+}
+
+.navbar .btn-primary:hover{
+    background:#c5b388;
+    border-color:#c5b388;
+    color:#fff;
+    transform:translateY(-2px);
+}
+/* --------------------------------------------------------------------------
+   3. Hero Banner
+   -------------------------------------------------------------------------- */
+.about-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 480px;
+  background: url('./images/gallery.jpeg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(17,17,17,0.4) 0%, rgba(17,17,17,0.85) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.gold-subtitle {
+  color: var(--gold);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.about-hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.about-hero p {
+  color: var(--text-light);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  font-weight: 300;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   4. Story Section (Split Architecture Layout)
+   -------------------------------------------------------------------------- */
+.about-story {
+  padding: 100px 24px;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.story-images {
+  position: relative;
+}
+
+.img-wrapper {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: var(--transition);
+}
+
+.main-img {
+  width: 85%;
+  height: 480px;
+}
+
+.floating-img {
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  width: 55%;
+  height: 280px;
+  border: 6px solid #ffffff;
+}
+
+.experience-badge {
+  position: absolute;
+  top: 30px;
+  left: -20px;
+  background: var(--dark);
+  color: #ffffff;
+  padding: 20px 24px;
+  border-radius: 6px;
+  border-left: 3px solid var(--gold);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.badge-num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.badge-text {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #cccccc;
+  margin-top: 4px;
+  display: block;
+}
+
+.story-text h2 {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  color: var(--dark);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.lead-text {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.story-text p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.story-quote blockquote {
+  border-left: 2px solid var(--gold);
+  padding-left: 20px;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--dark);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* .video-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+} */
+/* --------------------------------------------------------------------------
+   5. Core Pillars / Philosophy Section
+   -------------------------------------------------------------------------- */
+/* ============================================================
+   BESPOKE SERVICES & PILLARS (THE BRIJ VILLA)
+   ============================================================ */
+.about-pillars {
+  padding: 5rem 0;
+  background: var(--ivory, #faf8f5);
+}
+
+.about-pillars .section-header h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: var(--charcoal, #222);
+  margin-top: 0.5rem;
+}
+
+.header-line {
+  width: 50px;
+  height: 1px;
+  background: var(--gold, #b88a3b);
+  margin: 1rem auto 2.5rem;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.pillar-card {
+  position: relative;
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border: 1px solid rgba(184, 138, 59, 0.2);
+  border-radius: 4px;
+  transition: all 0.4s ease;
+}
+
+.pillar-card:hover {
+  border-color: var(--gold, #b88a3b);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(184, 138, 59, 0.08);
+}
+
+.pillar-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--gold, #b88a3b);
+  margin-bottom: 1.25rem;
+}
+
+.pillar-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.pillar-num {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  color: var(--gold, #b88a3b);
+  opacity: 0.35;
+  font-weight: 300;
+}
+
+.pillar-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--charcoal, #222);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.pillar-card p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #666;
+}
+
+/* Responsive adjustment for screens under 768px */
+@media (max-width: 768px) {
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+/* --------------------------------------------------------------------------
+   6. Key Metrics & Statistics Banner
+   -------------------------------------------------------------------------- */
+/* ============================================================
+   EXTRA LUXURY STATS BANNER (THE BRIJ VILLA)
+   ============================================================ */
+.about-stats {
+  background: var(--charcoal, #121212);
+  padding: 4.5rem 0;
+  border-top: 1px solid rgba(184, 138, 59, 0.3);
+  border-bottom: 1px solid rgba(184, 138, 59, 0.3);
+  position: relative;
+}
+
+/* Subtle gold top/bottom accent line glow */
+.about-stats::before,
+.about-stats::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 2px;
+  background: var(--gold, #b88a3b);
+}
+
+.about-stats::before {
+  top: -1px;
+}
+
+.about-stats::after {
+  bottom: -1px;
+}
+
+.stats-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+  flex: 1;
+}
+
+.stat-number {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: var(--gold, #b88a3b);
+  line-height: 1;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 2px 10px rgba(184, 138, 59, 0.15);
+}
+
+.stat-label {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Slim Gold Gradient Divider */
+.stat-divider {
+  width: 1px;
+  height: 55px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(184, 138, 59, 0.6),
+    transparent
+  );
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 768px) {
+  .about-stats {
+    padding: 3.5rem 1rem;
+  }
+  .stats-flex {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 1rem;
+  }
+  .stat-divider {
+    display: none;
+  }
+  .stat-number {
+    font-size: 2.8rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. Call To Action (CTA) Box
+   -------------------------------------------------------------------------- */
+/* ============================================================
+   EXTRA LUXURY CTA SECTION (THE BRIJ VILLA)
+   ============================================================ */
+.about-cta {
+  padding: 5rem 0;
+  background: var(--ivory, #faf8f5);
+}
+
+.cta-card {
+  background: var(--charcoal, #121212);
+  border: 1px solid rgba(184, 138, 59, 0.35);
+  border-radius: 4px;
+  padding: 4.5rem 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Subtle inset gold outline overlay for framing */
+.cta-card::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1px solid rgba(184, 138, 59, 0.15);
+  pointer-events: none;
+  border-radius: 2px;
+}
+
+.cta-content {
+  max-width: 620px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-subtitle {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--gold, #b88a3b);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.cta-content h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  letter-spacing: 0.01em;
+}
+
+.cta-content p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+}
+
+.cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+/* Primary Gold Button */
+.btn-primary {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--gold, #b88a3b);
+  color: #ffffff;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+  border: 1px solid var(--gold, #b88a3b);
+  border-radius: 2px;
+  transition: all 0.35 ease;
+}
+
+.btn-primary:hover {
+  background: #a37830;
+  border-color: #a37830;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(184, 138, 59, 0.25);
+}
+
+/* Outline Light Button */
+.btn-outline {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: transparent;
+  color: #ffffff;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+  transition: all 0.35s ease;
+}
+
+.btn-outline:hover {
+  border-color: var(--gold, #b88a3b);
+  color: var(--gold, #b88a3b);
+  transform: translateY(-2px);
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 992px) {
+  .cta-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 3.5rem 2rem;
+    gap: 2rem;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   8. Shared Footer Styles (Exact Match to Index CSS)
+   ========================================================================== */
+footer {
+  background: #111111;
+  color: #e0e0e0;
+  padding: 80px 5% 30px;
+  border-top: 1px solid rgba(159, 135, 92, 0.2);
+}
+
+.footer-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 0.8fr 1.2fr;
+  gap: 40px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-main {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold, #9f875c);
+  letter-spacing: 1px;
+}
+
+.logo-sub {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #888888;
+  margin-top: 2px;
+}
+
+.footer-tagline {
+  font-size: 0.88rem;
+  color: #aaaaaa;
+  line-height: 1.7;
+  margin: 18px 0 22px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(159, 135, 92, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold, #9f875c);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  background: var(--gold, #9f875c);
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.footer-col h5 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #aaaaaa;
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: var(--gold, #9f875c);
+}
+
+.contact-item {
+  display: flex;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: #aaaaaa;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.contact-item a {
+  color: #aaaaaa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: var(--gold, #9f875c);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  font-size: 0.82rem;
+  color: #777777;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #777777;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   9. Responsive Design
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .main-img {
+    width: 100%;
+    height: 380px;
+  }
+  
+  .floating-img {
+    display: none;
+  }
+
+  .cta-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 30px;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-story, 
+  .about-pillars, 
+  .about-cta {
+    padding: 60px 20px;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-actions a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}

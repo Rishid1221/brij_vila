@@ -1,0 +1,479 @@
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+/* Color Variables */
+:root {
+  --gold-primary: #c5a059;
+  --gold-light: #e5cf9b;
+  --dark-bg: #0f1216;
+  --dark-card: #181d24;
+  --text-gold: #d4af37;
+  --body-bg: #fcfbfa;
+}
+
+/* Page Setup */
+body.luxury-gallery-page {
+  background-color: var(--body-bg);
+  color: #2b2b2b;
+}
+
+/* Cinema Hero Section */
+.gallery-hero-cinema {
+  position: relative;
+  height: 60vh;
+  min-height: 480px;
+  background: url('./images/gallerybread.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: -80px; /* Offset fixed header */
+  padding-top: 80px;
+}
+
+.nav-logo {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none;
+}
+
+/* Emblem Logo Size */
+.nav-logo-img {
+  height: 65px;
+  width: 65px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.nav-logo:hover .nav-logo-img {
+  transform: scale(1.05);
+  border-color: #c5a059;
+}
+
+/* Right Side Text Layout */
+.logo-text-group {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.logo-main {
+  font-family: 'Cinzel', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #c5a059; /* Gold accent */
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.logo-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 3px;
+  white-space: nowrap;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .nav-logo-img {
+    height: 38px;
+    width: 38px;
+  }
+  .logo-main {
+    font-size: 1.1rem;
+  }
+  .logo-sub {
+    font-size: 0.5rem;
+  }
+}
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15,18,22,0.6) 0%, rgba(15,18,22,0.85) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 750px;
+  padding: 0 1.5rem;
+}
+
+.gold-badge {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  border: 1px solid rgba(229, 207, 155, 0.4);
+  padding: 0.4rem 1.2rem;
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  border-radius: 50px;
+  backdrop-filter: blur(4px);
+}
+
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 2px;
+  margin-bottom: 0.8rem;
+}
+
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+  color: var(--gold-primary);
+  font-size: 1rem;
+}
+
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+  margin: 0 1rem;
+}
+
+.hero-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* Luxury Container */
+.luxury-gallery-container {
+  max-width: 1400px;
+  margin: -3rem auto 6rem;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Glassmorphic Filter Bar */
+.filter-bar-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3.5rem;
+}
+
+.gallery-filters {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 0.6rem;
+  border-radius: 50px;
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  border: none;
+  padding: 0.75rem 1.8rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #555;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.filter-btn:hover {
+  color: var(--gold-primary);
+}
+
+.filter-btn.active {
+  background: var(--dark-bg);
+  color: var(--gold-light);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Masonry Grid Layout */
+.luxury-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 320px;
+  gap: 1.8rem;
+}
+
+.luxury-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.luxury-item.item-tall {
+  grid-row: span 2;
+}
+
+.luxury-item.item-wide {
+  grid-column: span 2;
+}
+
+.luxury-item.item-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.card-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(15,18,22,0.92) 100%);
+  opacity: 0.85;
+  transition: opacity 0.4s ease;
+}
+
+.card-badge {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  background: rgba(15, 18, 22, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  color: var(--gold-light);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.7rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  transform: translateY(10px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-cat {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold-primary);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.65rem;
+  color: #ffffff;
+  font-weight: 400;
+  margin: 0 0 0.3rem 0;
+}
+
+.card-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  color: #c0c0c0;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.4s ease;
+}
+
+.preview-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+/* Hover States */
+.luxury-item:hover .card-inner img {
+  transform: scale(1.08);
+}
+
+.luxury-item:hover .preview-btn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.luxury-item:hover .card-desc {
+  opacity: 1;
+  max-height: 50px;
+}
+
+.luxury-item:hover .card-info {
+  transform: translateY(0);
+}
+
+.preview-btn:hover {
+  background: var(--gold-primary);
+  border-color: var(--gold-primary);
+}
+
+/* Lightbox Modal */
+.luxury-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(10, 12, 15, 0.95);
+  backdrop-filter: blur(15px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.luxury-lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 85vw;
+  max-height: 85vh;
+  text-align: center;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 72vh;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+}
+
+.lightbox-caption {
+  margin-top: 1.5rem;
+}
+
+#lightboxCat {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+}
+
+#lightboxTitle {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-top: 0.3rem;
+  font-weight: 400;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 3rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+  color: var(--gold-primary);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Scaling */
+@media (max-width: 1024px) {
+  .luxury-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 280px;
+  }
+  .luxury-item.item-large {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  .hero-title {
+    font-size: 2.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .luxury-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 260px;
+  }
+  .luxury-item.item-wide,
+  .luxury-item.item-large,
+  .luxury-item.item-tall {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .gallery-hero-cinema {
+    height: 45vh;
+  }
+  .hero-title {
+    font-size: 2.1rem;
+  }
+}

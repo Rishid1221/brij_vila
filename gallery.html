@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Luxury Journal | Brij Vila</title>
+  
+  <!-- Shared Global CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="about.css">
+  
+  <!-- Page Specific Luxury Gallery CSS -->
+  <link rel="stylesheet" href="gallery.css">
+  
+  <!-- Premium Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body class="magazine-body luxury-gallery-page">
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <a href="index.html" class="nav-logo">
+      <img 
+        src="./images/88f17f92-57b8-442e-8bf9-5949bb6d2c0f-removebg-preview.png" 
+        alt="Brij Villa Logo" 
+        class="nav-logo-img" 
+      />
+      <div class="logo-text-group">
+        <span class="logo-main">Brij Villa</span>
+        <span class="logo-sub">Jaisalmer, Rajasthan</span>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="rooms.html">Rooms & Suites</a>
+      <a href="explore.html">Explore Jaisalmer</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn-primary">BOOK NOW</a>
+  </header>
+
+  <main class="editorial-wrapper">
+
+    <!-- Cinema Hero Header -->
+    <section class="gallery-hero-cinema">
+      <div class="hero-bg-overlay"></div>
+      <div class="hero-content">
+        <span class="gold-badge">Visual Archives</span>
+        <h1 class="hero-title">The Royal Spectrum</h1>
+        <div class="gold-divider"><span>&#10022;</span></div>
+        <p class="hero-subtitle">Immerse yourself in the golden architecture, tranquil courtyards, and ethereal desert twilights of Brij Vila.</p>
+      </div>
+    </section>
+
+    <!-- Luxury Interactive Gallery Container -->
+    <section class="luxury-gallery-container">
+      
+      <!-- Glassmorphic Filter Bar -->
+      <div class="filter-bar-wrapper">
+        <div class="gallery-filters">
+          <button class="filter-btn active" onclick="filterGallery('all', this)">
+            <span>All Collection</span>
+          </button>
+          <button class="filter-btn" onclick="filterGallery('architecture', this)">
+            <span>Royal Citadel</span>
+          </button>
+          <button class="filter-btn" onclick="filterGallery('interiors', this)">
+            <span>Suites & Living</span>
+          </button>
+          <button class="filter-btn" onclick="filterGallery('experiences', this)">
+            <span>Desert Experiences</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Asymmetrical Editorial Masonry Grid -->
+      <div class="luxury-grid" id="galleryGrid">
+        
+        <!-- Item 1: Large Featured Card -->
+        <div class="luxury-item item-large" data-category="architecture">
+          <div class="card-inner">
+            <img src="./images/jaisalmer.jpg" alt="Golden Citadel View">
+            <div class="card-gradient"></div>
+            <div class="card-badge">UNESCO Citadel View</div>
+            <div class="card-info">
+              <span class="card-cat">Architecture</span>
+              <h3 class="card-title">Golden Sandstone Citadel</h3>
+              <p class="card-desc">Carved yellow stone archways framing the desert sun.</p>
+            </div>
+            <button class="preview-btn" onclick="openLightbox('./images/jaisalmer.jpg', 'Golden Sandstone Citadel', 'Architecture')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 2: Vertical Portrait Card -->
+        <div class="luxury-item item-tall" data-category="interiors">
+          <div class="card-inner">
+            <img src="./images/superdelux.png" alt="Super Deluxe Suite">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+              <span class="card-cat">Suites & Living</span>
+              <h3 class="card-title">Heritage Super Deluxe Suite</h3>
+              <p class="card-desc">Handcrafted silks and Rajasthani brass accents.</p>
+            </div>
+            <button class="preview-btn" onclick="openLightbox('./images/superdelux.png', 'Heritage Super Deluxe Suite', 'Suites & Living')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 3: Regular Card -->
+        <div class="luxury-item" data-category="experiences">
+          <div class="card-inner">
+            <img src="./images/samsdunes.jpg" alt="Sam Sand Dunes">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+              <span class="card-cat">Desert Experiences</span>
+              <h3 class="card-title">Sunset over Sam Dunes</h3>
+              <p class="card-desc">Private camel safaris across untouched ridge lines.</p>
+            </div>
+            <button class="preview-btn" onclick="openLightbox('./images/samsdunes.jpg', 'Sunset over Sam Dunes', 'Desert Experiences')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 4: Wide Feature -->
+        <div class="luxury-item item-wide" data-category="architecture">
+          <div class="card-inner">
+            <img src="./images/patwaokihaveli.png" alt="Patwon Ki Haveli">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+              <span class="card-cat">Architecture</span>
+              <h3 class="card-title">Patwon Ki Haveli Balconies</h3>
+              <p class="card-desc">Lace-like lattice stonecraft dating back centuries.</p>
+            </div>
+            <button class="preview-btn" onclick="openLightbox('./images/patwaokihaveli.png', 'Patwon Ki Haveli Balconies', 'Architecture')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 5: Ghost Village Experience -->
+        <div class="luxury-item" data-category="experiences">
+          <div class="card-inner">
+            <img src="./images/Kuldhara.jpg" alt="Kuldhara Ghost Village">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+              <span class="card-cat">Desert Experiences</span>
+              <h3 class="card-title">Kuldhara Heritage Ruins</h3>
+              <p class="card-desc">Ancient deserted heritage village frozen in time.</p>
+            </div>
+            <button class="preview-btn" onclick="openLightbox('./images/Kuldhara.jpg', 'Kuldhara Heritage Ruins', 'Desert Experiences')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 6: Kuldhara Alternate View -->
+        <div class="luxury-item" data-category="experiences">
+          <div class="card-inner">
+            <img src="./images/Kuldhara2.jpg" alt="Kuldhara Abandoned Village Detail">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+              <span class="card-cat">Desert Experiences</span>
+              <h3 class="card-title">Kuldhara Stone Trails</h3>
+              <p class="card-desc">Exploring the mystic pathways of Paliwal Brahmins.</p>
+            </div>
+            <button class="preview-btn" onclick="openLightbox('./images/Kuldhara2.jpg', 'Kuldhara Stone Trails', 'Desert Experiences')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 7: Deluxe Room Sanctuary -->
+        <div class="luxury-item" data-category="interiors">
+          <div class="card-inner">
+            <img src="./images/delux.jpeg" alt="Deluxe Room Interior">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+              <span class="card-cat">Suites & Living</span>
+              <h3 class="card-title">Deluxe Room Sanctuary</h3>
+              <p class="card-desc">Refined comforts with traditional Rajasthani aesthetics.</p>
+            </div>
+            <button class="preview-btn" onclick="openLightbox('./images/delux.jpeg', 'Deluxe Room Sanctuary', 'Suites & Living')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 8: Experience Card (Gadisar Lake Gate) -->
+        <div class="luxury-item item-tall" data-category="experiences">
+          <div class="card-inner">
+            <img src="./images/Gadisarlake.jpg" alt="Gadisar Lake Gate">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+              <span class="card-cat">Desert Experiences</span>
+              <h3 class="card-title">Tilon Ki Pol Archway</h3>
+              <p class="card-desc">Historic gateway standing over tranquil lake waters.</p>
+            </div>
+            <button class="preview-btn" onclick="openLightbox('./images/Gadisarlake.jpg', 'Tilon Ki Pol Archway', 'Desert Experiences')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 9: Experience Card (Gadisar Lake Panorama) -->
+        <div class="luxury-item item-wide" data-category="experiences">
+          <div class="card-inner">
+            <img src="./images/Gadisarlake2.jpg" alt="Serene Gadisar Lake Panorama">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+              <span class="card-cat">Desert Experiences</span>
+              <h3 class="card-title">Serene Gadisar Lake Vistas</h3>
+              <p class="card-desc">Tranquil water views surrounded by historic shrines.</p>
+            </div>
+            <button class="preview-btn" onclick="openLightbox('./images/Gadisarlake2.jpg', 'Serene Gadisar Lake Vistas', 'Desert Experiences')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 10: Architecture Bada Bagh -->
+        <div class="luxury-item" data-category="architecture">
+          <div class="card-inner">
+            <img src="./images/badabagh.jpg" alt="Bada Bagh Cenotaphs">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+              <span class="card-cat">Architecture</span>
+              <h3 class="card-title">Bada Bagh Cenotaphs</h3>
+              <p class="card-desc">Majestic Royal Chhatris standing against golden horizons.</p>
+            </div>
+            <button class="preview-btn" onclick="openLightbox('./images/badabagh.jpg', 'Bada Bagh Cenotaphs', 'Architecture')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 11: Jaisalmer Fort Exterior -->
+        <div class="luxury-item item-large" data-category="architecture">
+          <div class="card-inner">
+            <img src="./images/jaisalmerfort.jpg" alt="Jaisalmer Fort Citadel">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+              <span class="card-cat">Architecture</span>
+              <h3 class="card-title">Sonar Qila Ramparts</h3>
+              <p class="card-desc">The living golden fort rising out of the desert sands.</p>
+            </div>
+            <button class="preview-btn" onclick="openLightbox('./images/jaisalmerfort.jpg', 'Sonar Qila Ramparts', 'Architecture')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 12: Jaisalmer Streets & Heritage -->
+        <div class="luxury-item" data-category="architecture">
+          <div class="card-inner">
+            <img src="./images/jaisalmer2.jpg" alt="Jaisalmer Old City Street">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+              <span class="card-cat">Architecture</span>
+              <h3 class="card-title">Old City Heritage Lanes</h3>
+              <p class="card-desc">Intricate stone-carved alleys in the golden heart of Rajasthan.</p>
+            </div>
+            <button class="preview-btn" onclick="openLightbox('./images/jaisalmer2.jpg', 'Old City Heritage Lanes', 'Architecture')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 13: Resort Overview / About Feature -->
+        <div class="luxury-item" data-category="architecture">
+          <div class="card-inner">
+            <img src="./images/jaisalmerabout.jpg" alt="The Brij Vila Grounds">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+              <span class="card-cat">Architecture</span>
+              <h3 class="card-title">Sanctuary Courtyards</h3>
+              <p class="card-desc">A tranquil courtyard retreat surrounded by golden stonework.</p>
+            </div>
+            <button class="preview-btn" onclick="openLightbox('./images/jaisalmerabout.jpg', 'Sanctuary Courtyards', 'Architecture')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 14: Luxury Suite Bathroom -->
+        <div class="luxury-item" data-category="interiors">
+          <div class="card-inner">
+            <img src="./images/superdbath.jpeg" alt="Super Deluxe Suite Bathroom">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+              <span class="card-cat">Suites & Living</span>
+              <h3 class="card-title">Royal Suite Bath</h3>
+              <p class="card-desc">Hand-chiseled marble, gold fixtures, and premium amenities.</p>
+            </div>
+            <button class="preview-btn" onclick="openLightbox('./images/superdbath.jpeg', 'Royal Suite Bath', 'Suites & Living')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 15: Suite Interiors -->
+        <div class="luxury-item" data-category="interiors">
+          <div class="card-inner">
+            <img src="./images/376b0189-cbac-4f1a-8d41-93de6c979342.jpeg" alt="Royal Bedroom Suite">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+              <span class="card-cat">Suites & Living</span>
+              <h3 class="card-title">Imperial Bedchamber</h3>
+              <p class="card-desc">Elegant bedroom design infused with imperial grandeur.</p>
+            </div>
+            <button class="preview-btn" onclick="openLightbox('./images/376b0189-cbac-4f1a-8d41-93de6c979342.jpeg', 'Imperial Bedchamber', 'Suites & Living')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 16: Executive Heritage Room -->
+        <div class="luxury-item" data-category="interiors">
+          <div class="card-inner">
+            <img src="./images/de0ff158-8f7a-4eed-8fd4-2925e08bc74e.jpeg" alt="Executive Heritage Room">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+              <span class="card-cat">Suites & Living</span>
+              <h3 class="card-title">Executive Heritage Suite</h3>
+              <p class="card-desc">Warm wooden tones and golden accents for absolute comfort.</p>
+            </div>
+            <button class="preview-btn" onclick="openLightbox('./images/de0ff158-8f7a-4eed-8fd4-2925e08bc74e.jpeg', 'Executive Heritage Suite', 'Suites & Living')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 17: Suite Lounge & Decor -->
+        <div class="luxury-item" data-category="interiors">
+          <div class="card-inner">
+            <img src="./images/b86c5b0a-3cf3-40be-bb03-55819a465ee1.jpeg" alt="Heritage Suite Lounge Area">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+              <span class="card-cat">Suites & Living</span>
+              <h3 class="card-title">Heritage Lounge Suite</h3>
+              <p class="card-desc">Artisanal seating and plush textiles curated for relaxation.</p>
+            </div>
+            <button class="preview-btn" onclick="openLightbox('./images/b86c5b0a-3cf3-40be-bb03-55819a465ee1.jpeg', 'Heritage Lounge Suite', 'Suites & Living')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 18: Rooms Breadcrumb Banner Image -->
+        <div class="luxury-item item-wide" data-category="interiors">
+          <div class="card-inner">
+            <img src="./images/roomsbread.jpeg" alt="Royal Suite Living View">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+              <span class="card-cat">Suites & Living</span>
+              <h3 class="card-title">Brij Royal Sanctuary</h3>
+              <p class="card-desc">Spacious living spaces harmonizing royal luxury with modern ease.</p>
+            </div>
+            <button class="preview-btn" onclick="openLightbox('./images/roomsbread.jpeg', 'Brij Royal Sanctuary', 'Suites & Living')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+        </div>
+        <div class="luxury-item item-wide" data-category="interiors">
+          <div class="card-inner">
+            <img src="./images/gallery.jpeg" alt="Royal Suite Living View">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+              <span class="card-cat">Suites & Living</span>
+              <h3 class="card-title">Brij Royal Sanctuary</h3>
+              <p class="card-desc">Spacious living spaces harmonizing royal luxury with modern ease.</p>
+            </div>
+            <button class="preview-btn" onclick="openLightbox('./images/roomsbread.jpeg', 'Brij Royal Sanctuary', 'Suites & Living')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive Lightbox Modal -->
+  <div class="luxury-lightbox" id="lightboxModal">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="Enlarged View">
+      <div class="lightbox-caption">
+        <span id="lightboxCat">Category</span>
+        <h3 id="lightboxTitle">Image Title</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-col">
+          <a href="index.html" class="nav-logo">
+            <span class="logo-main">Brij Vila</span>
+            <span class="logo-sub">Jaisalmer</span>
+          </a>
+          <p class="footer-tagline">
+            A luxury sanctuary crafted from Jaisalmer’s iconic golden sandstone. Experience timeless royal hospitality in the heart of the Thar Desert.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="rooms.html">Rooms & Suites</a></li>
+            <li><a href="explore.html">Explore Jaisalmer</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Experiences</h5>
+          <ul>
+            <li><a href="explore.html">Jaisalmer Fort</a></li>
+            <li><a href="explore.html">Desert Safari</a></li>
+            <li><a href="explore.html">Gadisar Lake</a></li>
+            <li><a href="contact.html">Reservations</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact Us</h5>
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot" style="margin-top: 3px;"></i>
+            <span>Near Sunset Point, Sam Road, Jaisalmer, Rajasthan 345001</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-phone" style="margin-top: 3px;"></i>
+            <a href="tel:+918769878788">+91 8769878788</a>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope" style="margin-top: 3px;"></i>
+            <a href="mailto:info@Brijvilajaisalmer.com">info@Brijvilajaisalmer.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Brij Vila Jaisalmer. All Rights Reserved.</p>
+        <div class="footer-links">
+          <a href="./privacy.html">Privacy Policy</a>
+          <a href="./terms.html">Terms of Service</a>
+          <a href="./cancellation-policy.html">Cancellation Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox & Filter Logic -->
+  <script>
+    function filterGallery(category, btnElement) {
+      const items = document.querySelectorAll('.luxury-item');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      btnElement.classList.add('active');
+
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.style.display = 'block';
+          item.style.animation = 'fadeInUp 0.5s ease forwards';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function openLightbox(imgSrc, title, category) {
+      const modal = document.getElementById('lightboxModal');
+      document.getElementById('lightboxImg').src = imgSrc;
+      document.getElementById('lightboxTitle').innerText = title;
+      document.getElementById('lightboxCat').innerText = category;
+      modal.classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.remove('active');
+    }
+
+    // Close on Escape Key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,381 @@
+/* ==========================================================================
+   Rooms & Stays Custom Styles — Brij Vila Jaisalmer
+   ========================================================================== */
+
+.rooms-hero {
+  background: url('./images/roomsbread.jpeg') center/cover no-repeat;
+}
+
+.nav-logo {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none;
+}
+
+/* Emblem Logo Size */
+.nav-logo-img {
+  height: 65px;
+  width: 65px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.nav-logo:hover .nav-logo-img {
+  transform: scale(1.05);
+  border-color: #c5a059;
+}
+
+/* Right Side Text Layout */
+.logo-text-group {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.logo-main {
+  font-family: 'Cinzel', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #c5a059; /* Gold accent */
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.logo-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 3px;
+  white-space: nowrap;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .nav-logo-img {
+    height: 38px;
+    width: 38px;
+  }
+  .logo-main {
+    font-size: 1.1rem;
+  }
+  .logo-sub {
+    font-size: 0.5rem;
+  }
+}
+.rooms-section {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* Room Card Grid Setup */
+.room-card {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #f0ece1;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  overflow: hidden;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.room-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.room-card.reverse {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.room-card.reverse .room-slider {
+  order: 2;
+}
+
+/* Image Slider Component */
+.room-slider {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #111;
+}
+
+.slider-track {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Slider Arrow Buttons */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.slider-btn:hover {
+  background: #9f875c;
+  border-color: #9f875c;
+}
+
+.slider-btn.prev { left: 15px; }
+.slider-btn.next { right: 15px; }
+
+/* Slider Pagination Dots */
+.slider-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #9f875c;
+  width: 24px;
+  border-radius: 10px;
+}
+
+/* Room Badges */
+.room-category-tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(17, 17, 17, 0.8);
+  backdrop-filter: blur(4px);
+  color: #9f875c;
+  border: 1px solid rgba(159, 135, 92, 0.4);
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 10;
+}
+
+.room-category-tag.premium {
+  background: #9f875c;
+  color: #ffffff;
+}
+
+/* Room Details */
+.room-details h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  color: #111111;
+  margin-bottom: 12px;
+}
+
+.room-desc {
+  color: #666666;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.room-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-bottom: 18px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f0ece1;
+}
+
+.spec-item {
+  font-size: 0.85rem;
+  color: #444444;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spec-item i {
+  color: #9f875c;
+}
+
+.room-features-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.room-features-list span {
+  font-size: 0.85rem;
+  color: #555555;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.room-features-list i {
+  color: #9f875c;
+  font-size: 0.75rem;
+}
+
+.room-pricing-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fdfbf7;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid #eee8db;
+}
+
+.price-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #888888;
+  letter-spacing: 0.5px;
+}
+
+.price-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #9f875c;
+}
+
+.price-amount sub {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  color: #888888;
+  font-weight: 400;
+}
+
+/* Inclusions Banner */
+.inclusions-banner {
+  background: #fcfbfa;
+  padding: 80px 0;
+  border-top: 1px solid #f0ece1;
+}
+
+.inclusions-banner h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  color: #111;
+  margin-bottom: 40px;
+}
+
+.inclusions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.inc-item {
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 8px;
+  border: 1px solid #eee8db;
+}
+
+.inc-item i {
+  font-size: 2rem;
+  color: #9f875c;
+  margin-bottom: 15px;
+}
+
+.inc-item h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.inc-item p {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .room-card,
+  .room-card.reverse {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .room-card.reverse .room-slider {
+    order: 0;
+  }
+
+  .room-slider {
+    height: 320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .room-pricing-bar {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .room-features-list {
+    grid-template-columns: 1fr;
+  }
+}

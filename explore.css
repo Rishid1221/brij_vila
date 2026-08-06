@@ -1,0 +1,605 @@
+/* ==========================================================================
+   High-Fashion Luxury Magazine Spread (Grid-Free) - Explore Jaisalmer Page
+   ========================================================================== */
+
+.magazine-body {
+  background-color: #f7f4ed;
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+.editorial-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 40px 24px 100px 24px;
+}
+
+/* ==========================================================================
+   Editorial Hero Cover with Background Image
+   ========================================================================== */
+
+.editorial-cover {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 24px 60px 24px;
+  margin-bottom: 80px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  
+  /* High-Res Jaisalmer Landscape Background */
+  background: url('https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+}
+
+
+.nav-logo {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none;
+}
+
+/* Emblem Logo Size */
+.nav-logo-img {
+  height: 65px;
+  width: 65px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.nav-logo:hover .nav-logo-img {
+  transform: scale(1.05);
+  border-color: #c5a059;
+}
+
+/* Right Side Text Layout */
+.logo-text-group {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.logo-main {
+  font-family: 'Cinzel', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #c5a059; /* Gold accent */
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.logo-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 3px;
+  white-space: nowrap;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .nav-logo-img {
+    height: 38px;
+    width: 38px;
+  }
+  .logo-main {
+    font-size: 1.1rem;
+  }
+  .logo-sub {
+    font-size: 0.5rem;
+  }
+}
+/* Dark Gradient Overlay for Contrast */
+.cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg, 
+    rgba(15, 15, 15, 0.75) 0%, 
+    rgba(15, 15, 15, 0.65) 50%, 
+    rgba(15, 15, 15, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+.cover-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.issue-tag {
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #d4af37;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.cover-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4.8rem;
+  font-weight: 300;
+  line-height: 1.02;
+  color: #ffffff;
+  margin-bottom: 18px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.cover-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: #e6c65c;
+}
+
+.cover-subtitle {
+  font-size: 1.05rem;
+  color: #dddddd;
+  max-width: 580px;
+  margin: 0 auto 36px auto;
+  line-height: 1.6;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.scroll-indicator span {
+  font-size: 0.7rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #d4af37;
+  font-weight: 500;
+}
+
+.scroll-indicator .line {
+  width: 1px;
+  height: 45px;
+  background: linear-gradient(180deg, #d4af37 0%, rgba(212, 175, 55, 0) 100%);
+}
+
+/* Responsive Scaling */
+@media (max-width: 768px) {
+  .editorial-cover {
+    min-height: 65vh;
+    padding: 70px 16px 40px 16px;
+  }
+  
+  .cover-title {
+    font-size: 3.2rem;
+  }
+  
+  .cover-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+}
+/* ==========================================================================
+   Compact Full-Bleed Hero Header (Matches Rooms Page Style)
+   ========================================================================== */
+
+.editorial-cover {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  min-height: 380px; /* Reduced compact height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 24px 40px 24px;
+  margin-top: 0;
+  margin-bottom: 60px;
+  border-radius: 0;
+  overflow: hidden;
+  
+  /* Background Image */
+  background: url('./images/explorebread.jpg') center center / cover no-repeat;
+}
+
+/* Dark Tint Overlay */
+.cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 15, 15, 0.72);
+  z-index: 1;
+}
+
+.cover-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.issue-tag {
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c9a86b;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.cover-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.2rem; /* Matches main heading scale */
+  font-weight: 400;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.cover-subtitle {
+  font-size: 0.95rem;
+  color: #cccccc;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .editorial-cover {
+    min-height: 280px;
+    padding: 40px 16px;
+  }
+  
+  .cover-title {
+    font-size: 2.3rem;
+  }
+
+  .cover-subtitle {
+    font-size: 0.88rem;
+  }
+}
+
+/* Spread Article Section */
+.spread-section {
+  position: relative;
+  margin-bottom: 160px;
+}
+
+/* Large Watermark Number */
+.watermark-number {
+  position: absolute;
+  top: -80px;
+  left: -20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16rem;
+  font-weight: 300;
+  color: rgba(140, 115, 75, 0.07);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.spread-reverse .spread-container {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+/* Asymmetrical Visuals Composition */
+.spread-visuals {
+  position: relative;
+}
+
+.img-frame-main {
+  width: 85%;
+  height: 480px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.img-frame-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.96);
+  transition: transform 0.8s ease;
+}
+
+.img-frame-main:hover img {
+  transform: scale(1.03);
+}
+
+.img-frame-accent {
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+  width: 55%;
+  height: 280px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  border: 6px solid #f7f4ed;
+}
+
+.img-frame-accent img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.activity-badge-float {
+  position: absolute;
+  top: 30px;
+  right: 10%;
+  background: #111111;
+  color: #f7f4ed;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.activity-badge-float i {
+  color: #c9a86b;
+}
+
+/* Copy Content */
+.spread-copy {
+  padding-top: 20px;
+}
+
+.chapter-label {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8c734b;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.chapter-label.center {
+  text-align: center;
+}
+
+.spread-copy h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #111111;
+}
+
+.editorial-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #554425;
+  border-left: 2px solid #8c734b;
+  padding-left: 18px;
+  margin: 0 0 25px 0;
+  line-height: 1.4;
+}
+
+.body-prose {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #444444;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.curated-pills {
+  border-top: 1px solid #e0d8c8;
+  padding-top: 20px;
+}
+
+.pill-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888888;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.pills-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pills-flex span {
+  background: #eae3d2;
+  color: #332b1d;
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 400;
+}
+
+/* Journal Index Section */
+.journal-index-section {
+  border-top: 1px solid #e0d8c8;
+  padding-top: 80px;
+  margin-top: 40px;
+}
+
+.journal-index-inner {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.index-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+
+.journal-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.journal-row {
+  display: flex;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid #e0d8c8;
+  gap: 30px;
+}
+
+.row-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  color: #8c734b;
+  font-weight: 300;
+}
+
+.row-title {
+  flex: 1;
+}
+
+.row-title h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 4px;
+}
+
+.row-title p {
+  font-size: 0.85rem;
+  color: #666666;
+}
+
+.row-meta {
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #8c734b;
+  border: 1px solid #8c734b;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* ============================================================
+   ON-THEME EDITORIAL BOOKING BUTTON (THE BRIJ VILLA)
+   ============================================================ */
+.spread-action {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(184, 138, 59, 0.2);
+}
+
+.btn-editorial-book {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.75rem;
+  background: transparent;
+  color: var(--gold, #b88a3b);
+  border: 1px solid var(--gold, #b88a3b);
+  border-radius: 2px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+  transition: all 0.35s ease;
+}
+
+.btn-editorial-book i {
+  font-size: 1rem;
+  color: var(--gold, #b88a3b);
+  transition: color 0.35s ease;
+}
+
+.btn-editorial-book:hover {
+  background: var(--gold, #b88a3b);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(184, 138, 59, 0.22);
+}
+
+.btn-editorial-book:hover i {
+  color: #ffffff;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .cover-title {
+    font-size: 3.2rem;
+  }
+
+  .spread-container,
+  .spread-reverse .spread-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .img-frame-main {
+    width: 100%;
+    height: 350px;
+  }
+
+  .img-frame-accent {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 200px;
+    margin-top: 15px;
+    border: none;
+  }
+
+  .watermark-number {
+    font-size: 10rem;
+    top: -40px;
+  }
+
+  .journal-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
