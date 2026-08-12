@@ -116,12 +116,14 @@ Please do not redistribute the branding, images, or content without permission.
 
 ## Contact
 
-### The Brij Villa
+### Hotel Brij Villa
 
-📍 Jaisalmer, Rajasthan, India
+📍 Back Side Bhatia Mukti Dham, Near Parihar Hospital, Geeta Ashram Road, Jaisalmer, Rajasthan - 345001
 
-📞 +91 XXXXXXXXXX
+📞 +91 8769878788
 
-📧 info@theBrijvilla.com
+📧 brijvillajaisalmer@gmail.com
 
-🌐 https://rishid1221.github.io/Brij-villa/
+📸 https://www.instagram.com/brijvilla_jaisalmer?igsh=MWw5ZTd3NH1va2M3cA==
+
+📘 https://www.facebook.com/share/1Bj2ftABbc/

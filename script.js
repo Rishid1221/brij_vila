@@ -155,15 +155,61 @@ function closeLightbox() {
 }
 
 // ============================================================
-// HELPERS — FORM
+// HELPERS — FORM → WhatsApp enquiry
 // ============================================================
+const BRIJ_VILLA_WHATSAPP = "918769878788";
+
 function handleForm(e) {
   e.preventDefault();
+
   const form = document.getElementById("enquiryForm");
-  const success = document.getElementById("formSuccess");
-  if (!form || !success) return;
-  form.style.display = "none";
-  success.style.display = "block";
+  if (!form) return;
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  const name = form.fname.value.trim();
+  const email = form.email.value.trim();
+  const phone = form.phone.value.trim();
+  const purpose = form.purpose.value.trim();
+  const checkin = form.checkin.value;
+  const guests = form.guests.value.trim();
+  const message = form.message.value.trim();
+
+  const lines = [
+    `Name: ${name}`,
+    `Phone: ${phone}`,
+    email ? `Email: ${email}` : "",
+    purpose ? `Purpose: ${purpose}` : "",
+    checkin ? `Check-in: ${checkin}` : "",
+    guests ? `Guests: ${guests}` : "",
+    message ? `Message: ${message}` : "",
+  ].filter(Boolean);
+
+  const whatsappText = lines.join("\n");
+  const encodedText = encodeURIComponent(whatsappText);
+  const isMobile = /Android|iPhone|iPad|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
+
+  const whatsappUrl = isMobile
+    ? `https://wa.me/${BRIJ_VILLA_WHATSAPP}?text=${encodedText}`
+    : `https://web.whatsapp.com/send?phone=${BRIJ_VILLA_WHATSAPP}&text=${encodedText}`;
+
+  if (isMobile) {
+    window.location.href = whatsappUrl;
+    form.reset();
+    return;
+  }
+
+  const whatsappWindow = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
+  // Reset only after WhatsApp action is triggered (not on validation failure)
+  if (whatsappWindow !== null) {
+    form.reset();
+  }
 }
 
 // Expose for inline handlers in the HTML (onclick="openLightbox(...)" etc.)
@@ -519,4 +565,57 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       });
     }
   });
+});
+
+// ============================================================
+// HOME PAGE COUNTER — scroll-triggered count-up (runs once)
+// ============================================================
+document.addEventListener("DOMContentLoaded", () => {
+  const counterSection = document.getElementById("home-counter");
+  if (!counterSection) return;
+
+  const counters = counterSection.querySelectorAll("[data-count]");
+  if (!counters.length) return;
+
+  let hasAnimated = false;
+
+  const animateCounter = (element) => {
+    const target = parseFloat(element.dataset.count, 10);
+    const suffix = element.dataset.suffix || "";
+    const decimals = parseInt(element.dataset.decimals || "0", 10);
+    const duration = 1800;
+    const startTime = performance.now();
+
+    const tick = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = target * eased;
+      const displayValue = decimals
+        ? current.toFixed(decimals)
+        : Math.floor(current).toString();
+
+      element.textContent = `${displayValue}${suffix}`;
+
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      }
+    };
+
+    requestAnimationFrame(tick);
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting || hasAnimated) return;
+
+        hasAnimated = true;
+        counters.forEach(animateCounter);
+        observer.disconnect();
+      });
+    },
+    { threshold: 0.35 }
+  );
+
+  observer.observe(counterSection);
 });

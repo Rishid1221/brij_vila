@@ -116,7 +116,7 @@ section {
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:rgba(17,17,17,.92);
+    background:#F8F5EF;
     backdrop-filter:blur(12px);
     -webkit-backdrop-filter:blur(12px);
     border-bottom:1px solid rgba(197,160,89,.18);
@@ -161,13 +161,7 @@ section {
 }
 
 .navbar .logo-sub{
-    font-family:'DM Sans',sans-serif;
-    font-size:.60rem;
-    letter-spacing:1.8px;
-    text-transform:uppercase;
-    color:rgba(255,255,255,.65);
-    margin-top:3px;
-    white-space:nowrap;
+    display: none;
 }
 
 .navbar .nav-links{
@@ -178,7 +172,7 @@ section {
 
 .navbar .nav-links a{
     text-decoration:none;
-    color:#ddd;
+    color:#2C2C2C;
     font-family:'Plus Jakarta Sans',sans-serif;
     font-size:.9rem;
     transition:.3s;
@@ -202,6 +196,11 @@ section {
         padding:0 20px;
     }
 
+    .navbar .nav-links,
+    .navbar > .btn-primary {
+        display: none !important;
+    }
+
     .navbar .nav-logo-img{
         width:42px;
         height:42px;
@@ -212,7 +211,7 @@ section {
     }
 
     .navbar .logo-sub{
-        font-size:.52rem;
+        display: none;
     }
 
 }
@@ -242,6 +241,122 @@ section {
     color:#fff;
     transform:translateY(-2px);
 }
+
+/* Mobile menu (matches home page behaviour) */
+.navbar .nav-hamburger {
+  display: none;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  padding: 5px;
+  background: none;
+  border: none;
+  z-index: 10001;
+}
+
+.navbar .nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: #2C2C2C;
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.navbar .nav-hamburger.active span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.navbar .nav-hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.navbar .nav-hamburger.active span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .navbar .nav-hamburger {
+    display: flex !important;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+}
+
+.nav-mobile {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  transform-style: flat;
+  perspective: none;
+  background: rgba(26, 24, 21, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 10005;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
+}
+
+.nav-mobile.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.nav-mobile a,
+.nav-mobile .mob-link {
+  text-decoration: none;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #F8F4EB;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.nav-mobile.open a,
+.nav-mobile.open .mob-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-mobile.open a:nth-child(2) { transition-delay: 0.06s; }
+.nav-mobile.open a:nth-child(3) { transition-delay: 0.11s; }
+.nav-mobile.open a:nth-child(4) { transition-delay: 0.16s; }
+.nav-mobile.open a:nth-child(5) { transition-delay: 0.21s; }
+.nav-mobile.open a:nth-child(6) { transition-delay: 0.26s; }
+.nav-mobile.open a:nth-child(7) { transition-delay: 0.31s; }
+
+.nav-mobile a:hover,
+.nav-mobile .mob-link:hover {
+  color: #c5b388;
+}
+
+.nav-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 5%;
+  background: none;
+  border: none;
+  color: #c5b388;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
 /* --------------------------------------------------------------------------
    3. Hero Banner
    -------------------------------------------------------------------------- */
@@ -260,7 +375,7 @@ section {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(17,17,17,0.4) 0%, rgba(17,17,17,0.85) 100%);
+  background: linear-gradient(180deg, rgba(17,17,17,0.22) 0%, rgba(17,17,17,0.48) 100%);
 }
 
 .hero-content {
@@ -422,93 +537,196 @@ section {
    5. Core Pillars / Philosophy Section
    -------------------------------------------------------------------------- */
 /* ============================================================
-   BESPOKE SERVICES & PILLARS (THE BRIJ VILLA)
+   BRIJ EXPERIENCES — Curated Services Grid (About Page)
    ============================================================ */
-.about-pillars {
-  padding: 5rem 0;
+.about-pillars.brij-experiences {
+  padding: 5.5rem 0 6rem;
   background: var(--ivory, #faf8f5);
 }
 
-.about-pillars .section-header h2 {
+.brij-experiences-header h2 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 2.4rem;
+  font-size: clamp(1.85rem, 3vw, 2.35rem);
   font-weight: 500;
-  color: var(--charcoal, #222);
+  color: var(--charcoal, #2b2118);
   margin-top: 0.5rem;
-}
-
-.header-line {
-  width: 50px;
-  height: 1px;
-  background: var(--gold, #b88a3b);
-  margin: 1rem auto 2.5rem;
-}
-
-.pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-
-.pillar-card {
-  position: relative;
-  background: #ffffff;
-  padding: 2.5rem 2rem;
-  border: 1px solid rgba(184, 138, 59, 0.2);
-  border-radius: 4px;
-  transition: all 0.4s ease;
-}
-
-.pillar-card:hover {
-  border-color: var(--gold, #b88a3b);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(184, 138, 59, 0.08);
-}
-
-.pillar-icon {
-  width: 48px;
-  height: 48px;
-  color: var(--gold, #b88a3b);
-  margin-bottom: 1.25rem;
-}
-
-.pillar-icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-.pillar-num {
-  position: absolute;
-  top: 1.5rem;
-  right: 2rem;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.8rem;
-  color: var(--gold, #b88a3b);
-  opacity: 0.35;
-  font-weight: 300;
-}
-
-.pillar-card h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--charcoal, #222);
-  margin-bottom: 0.75rem;
   letter-spacing: 0.02em;
 }
 
-.pillar-card p {
-  font-family: "DM Sans", sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.65;
-  color: #666;
+.brij-experiences-header .header-line {
+  width: 50px;
+  height: 1px;
+  background: var(--gold, #b88a3b);
+  margin: 1rem auto 1.5rem;
 }
 
-/* Responsive adjustment for screens under 768px */
+.brij-experiences-intro {
+  max-width: 36rem;
+  margin: 0 auto 3rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #6b6358;
+  font-weight: 300;
+}
+
+.brij-experiences-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.experience-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid rgba(184, 138, 59, 0.18);
+  overflow: hidden;
+  transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(184, 138, 59, 0.45);
+  box-shadow: 0 18px 40px rgba(43, 33, 26, 0.07);
+}
+
+.experience-card-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #ebe4d8;
+}
+
+.experience-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.experience-card:hover .experience-card-media img {
+  transform: scale(1.06);
+}
+
+.experience-card-num {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #f8f5ef;
+  letter-spacing: 0.05em;
+  text-shadow: 0 1px 8px rgba(43, 33, 26, 0.35);
+  pointer-events: none;
+}
+
+.experience-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.5rem 1.35rem 1.65rem;
+}
+
+.experience-card-cat {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold, #b88a3b);
+  margin-bottom: 0.55rem;
+}
+
+.experience-card-body h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--charcoal, #2b2118);
+  line-height: 1.25;
+  margin-bottom: 0.65rem;
+  letter-spacing: 0.01em;
+}
+
+.experience-card-body p {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #6b6358;
+  font-weight: 300;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.experience-book-btn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.15rem;
+  background: transparent;
+  border: 1px solid var(--gold, #b88a3b);
+  color: #4a4038;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease, gap 0.35s ease;
+}
+
+.experience-book-btn i {
+  font-size: 0.75rem;
+  transition: transform 0.35s ease;
+}
+
+.experience-book-btn:hover,
+.experience-book-btn:focus-visible {
+  background: var(--gold, #b88a3b);
+  color: #f8f5ef;
+  border-color: var(--gold, #b88a3b);
+  outline: none;
+}
+
+.experience-book-btn:hover i,
+.experience-book-btn:focus-visible i {
+  transform: translateX(4px);
+}
+
+@media (max-width: 1024px) {
+  .brij-experiences-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
-  .pillars-grid {
+  .about-pillars.brij-experiences {
+    padding: 4rem 0 4.5rem;
+  }
+
+  .brij-experiences-intro {
+    margin-bottom: 2.25rem;
+    font-size: 0.9rem;
+  }
+
+  .brij-experiences-grid {
     grid-template-columns: 1fr;
     gap: 1.25rem;
+  }
+
+  .experience-card-body {
+    padding: 1.35rem 1.15rem 1.5rem;
+  }
+
+  .experience-book-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    min-height: 44px;
   }
 }
 /* --------------------------------------------------------------------------
@@ -764,10 +982,10 @@ section {
    8. Shared Footer Styles (Exact Match to Index CSS)
    ========================================================================== */
 footer {
-  background: #111111;
-  color: #e0e0e0;
+  background: #F8F5EF;
+  color: #4A4038;
   padding: 80px 5% 30px;
-  border-top: 1px solid rgba(159, 135, 92, 0.2);
+  border-top: 1px solid rgba(184, 138, 59, 0.25);
 }
 
 .footer-inner {
@@ -780,10 +998,10 @@ footer {
   grid-template-columns: 1.4fr 0.8fr 0.8fr 1.2fr;
   gap: 40px;
   padding-bottom: 60px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(184, 138, 59, 0.15);
 }
 
-.logo-main {
+footer .logo-main {
   display: block;
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.2rem;
@@ -792,18 +1010,19 @@ footer {
   letter-spacing: 1px;
 }
 
-.logo-sub {
-  display: block;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #888888;
-  margin-top: 2px;
+footer .nav-logo,
+footer .nav-logo:hover,
+footer .nav-logo:focus {
+  text-decoration: none;
+}
+
+footer .logo-sub {
+  display: none;
 }
 
 .footer-tagline {
   font-size: 0.88rem;
-  color: #aaaaaa;
+  color: #85786D;
   line-height: 1.7;
   margin: 18px 0 22px;
 }
@@ -817,7 +1036,8 @@ footer {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  border: 1px solid rgba(159, 135, 92, 0.4);
+  border: 1px solid rgba(184, 138, 59, 0.35);
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -835,7 +1055,7 @@ footer {
 .footer-col h5 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.3rem;
-  color: #ffffff;
+  color: #2B211A;
   margin-bottom: 20px;
   letter-spacing: 0.5px;
 }
@@ -851,7 +1071,7 @@ footer {
 }
 
 .footer-col ul li a {
-  color: #aaaaaa;
+  color: #85786D;
   text-decoration: none;
   font-size: 0.88rem;
   transition: color 0.3s ease;
@@ -865,13 +1085,13 @@ footer {
   display: flex;
   gap: 10px;
   font-size: 0.88rem;
-  color: #aaaaaa;
+  color: #85786D;
   margin-bottom: 12px;
   line-height: 1.6;
 }
 
 .contact-item a {
-  color: #aaaaaa;
+  color: #85786D;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -886,7 +1106,7 @@ footer {
   align-items: center;
   padding-top: 30px;
   font-size: 0.82rem;
-  color: #777777;
+  color: #85786D;
 }
 
 .footer-links {
@@ -895,13 +1115,13 @@ footer {
 }
 
 .footer-links a {
-  color: #777777;
+  color: #85786D;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #ffffff;
+  color: #2B211A;
 }
 
 /* --------------------------------------------------------------------------

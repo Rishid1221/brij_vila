@@ -30,19 +30,31 @@
   />
   <div class="logo-text-group">
     <span class="logo-main">Brij Villa</span>
-    <span class="logo-sub">Jaisalmer, Rajasthan</span>
   </div>
 </a>
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
-      <a href="rooms.html">Rooms & Suites</a>
+      <a href="rooms.html">Rooms & Services</a>
       <a href="explore.html">Explore Jaisalmer</a>
       <a href="gallery.html">Gallery</a>
       <a href="contact.html" class="active">Contact</a>
     </nav>
     <a href="contact.html" class="btn-primary">BOOK NOW</a>
+    <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+
+  <div class="nav-mobile" id="mobileNav">
+    <button class="nav-close" id="navClose" aria-label="Close menu">✕</button>
+    <a href="index.html" class="mob-link">Home</a>
+    <a href="about.html" class="mob-link">About Us</a>
+    <a href="rooms.html" class="mob-link">Rooms & Services</a>
+    <a href="explore.html" class="mob-link">Explore Jaisalmer</a>
+    <a href="gallery.html" class="mob-link">Gallery</a>
+    <a href="contact.html" class="mob-link">Contact</a>
+  </div>
 
   <main class="editorial-wrapper">
 
@@ -57,36 +69,66 @@
       </div>
     </section>
 
+    <!-- Contact Connect Icons -->
+    <section class="contact-connect-bar" aria-label="Connect with Brij Villa">
+      <div class="contact-connect-inner">
+        <a class="contact-connect-icon contact-app-link" data-contact="whatsapp" href="https://wa.me/918769878788" aria-label="WhatsApp">
+          <span class="connect-icon-circle"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>
+          <span class="connect-icon-label">WhatsApp</span>
+        </a>
+        <a class="contact-connect-icon contact-app-link" data-contact="instagram" href="https://www.instagram.com/brijvilla_jaisalmer?igsh=MWw5ZTd3NH1va2M3cA==" aria-label="Instagram">
+          <span class="connect-icon-circle"><i class="fa-brands fa-instagram" aria-hidden="true"></i></span>
+          <span class="connect-icon-label">Instagram</span>
+        </a>
+        <a class="contact-connect-icon contact-app-link" data-contact="email" href="mailto:brijvillajaisalmer@gmail.com" aria-label="Email via Gmail">
+          <span class="connect-icon-circle"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+          <span class="connect-icon-label">Gmail</span>
+        </a>
+        <a class="contact-connect-icon contact-app-link" data-contact="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Back+Side+Bhatia+Mukti+Dham,+Near+Parihar+Hospital,+Geeta+Ashram+Road,+Jaisalmer,+Rajasthan+-+345001" aria-label="Google Maps">
+          <span class="connect-icon-circle"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+          <span class="connect-icon-label">Location</span>
+        </a>
+      </div>
+    </section>
+
     <!-- Quick Contact Floating Grid -->
     <section class="quick-contact-container">
       <div class="quick-cards-grid">
         
         <div class="quick-card">
-          <div class="card-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Back+Side+Bhatia+Mukti+Dham,+Near+Parihar+Hospital,+Geeta+Ashram+Road,+Jaisalmer,+Rajasthan+-+345001" class="card-icon-link contact-app-link" data-contact="maps" aria-label="Open location in Google Maps">
+            <div class="card-icon"><i class="fa-solid fa-location-dot"></i></div>
+          </a>
           <h4>Sanctuary Address</h4>
-          <p>Near Sunset Point, Sam Road<br>Jaisalmer, Rajasthan 345001</p>
-          <a href="#mapSection" class="card-link">View Map <i class="fa-solid fa-arrow-right-long"></i></a>
+          <p>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Back+Side+Bhatia+Mukti+Dham,+Near+Parihar+Hospital,+Geeta+Ashram+Road,+Jaisalmer,+Rajasthan+-+345001" class="contact-address-link contact-app-link" data-contact="maps">Back Side Bhatia Mukti Dham, Near Parihar Hospital,<br>Geeta Ashram Road, Jaisalmer, Rajasthan - 345001</a>
+          </p>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Back+Side+Bhatia+Mukti+Dham,+Near+Parihar+Hospital,+Geeta+Ashram+Road,+Jaisalmer,+Rajasthan+-+345001" class="card-link contact-app-link" data-contact="maps">View Map <i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
 
         <div class="quick-card">
           <div class="card-icon"><i class="fa-solid fa-phone"></i></div>
           <h4>Direct Reservations</h4>
-          <p>+91 8769878788<br>+91 8769878788</p>
+          <p>+91 8769878788</p>
           <a href="tel:+918769878788" class="card-link">Call Concierge <i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
 
         <div class="quick-card">
-          <div class="card-icon"><i class="fa-brands fa-whatsapp"></i></div>
+          <a href="https://wa.me/918769878788" class="card-icon-link contact-app-link" data-contact="whatsapp" aria-label="Open WhatsApp">
+            <div class="card-icon"><i class="fa-brands fa-whatsapp"></i></div>
+          </a>
           <h4>Instant Assistance</h4>
           <p>Available 24/7 for guest inquiries and bespoke arrangements.</p>
-          <a href="https://wa.me/918769878788" target="_blank" class="card-link">Message Us <i class="fa-solid fa-arrow-right-long"></i></a>
+          <a href="https://wa.me/918769878788" class="card-link contact-app-link" data-contact="whatsapp">Message Us <i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
 
         <div class="quick-card">
-          <div class="card-icon"><i class="fa-solid fa-envelope"></i></div>
+          <a href="mailto:brijvillajaisalmer@gmail.com" class="card-icon-link contact-app-link" data-contact="email" aria-label="Open Gmail">
+            <div class="card-icon"><i class="fa-solid fa-envelope"></i></div>
+          </a>
           <h4>Private Desk</h4>
-          <p>info@Brijvilajaisalmer.com<br>stay@Brijvilajaisalmer.com</p>
-          <a href="mailto:info@Brijvilajaisalmer.com" class="card-link">Send Email <i class="fa-solid fa-arrow-right-long"></i></a>
+          <p>brijvillajaisalmer@gmail.com</p>
+          <a href="mailto:brijvillajaisalmer@gmail.com" class="card-link contact-app-link" data-contact="email">Send Email <i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
 
       </div>
@@ -104,7 +146,7 @@
             <p>Fill out the form below and our Guest Experience Manager will reach out within 2 hours.</p>
           </div>
 
-          <form class="luxury-form" onsubmit="event.preventDefault(); alert('Thank you. Our concierge team will connect with you shortly.');">
+          <form class="luxury-form" id="conciergeInquiryForm">
             <div class="form-row">
               <div class="form-group">
                 <label>Full Name *</label>
@@ -212,18 +254,23 @@
       <div class="map-header">
         <span class="chapter-label center">Location & Access</span>
         <h2 class="section-title">Getting to Brij Vila</h2>
-        <p class="section-subtitle">Located quietly along Sam Road, offering peaceful views of the desert horizon while being just 15 minutes away from Jaisalmer Fort.</p>
+        <p class="section-subtitle">Conveniently located on Geeta Ashram Road in Jaisalmer — peaceful access to the golden city and desert experiences.</p>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Back+Side+Bhatia+Mukti+Dham,+Near+Parihar+Hospital,+Geeta+Ashram+Road,+Jaisalmer,+Rajasthan+-+345001" class="map-address-link contact-app-link" data-contact="maps">
+          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+          Back Side Bhatia Mukti Dham, Near Parihar Hospital, Geeta Ashram Road, Jaisalmer, Rajasthan - 345001
+        </a>
       </div>
 
       <div class="map-wrapper">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57181.72986427878!2d70.87113115456424!3d26.91243355088219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3947bc180e08f511%3A0x86e68041d8e12170!2sJaisalmer%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+          src="https://maps.google.com/maps?q=Back+Side+Bhatia+Mukti+Dham,+Near+Parihar+Hospital,+Geeta+Ashram+Road,+Jaisalmer,+Rajasthan+-+345001&amp;output=embed" 
           width="100%" 
-          height="500" 
+          height="580" 
           style="border:0;" 
           allowfullscreen="" 
           loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Hotel Brij Villa location on Google Maps">
         </iframe>
       </div>
     </section>
@@ -278,16 +325,15 @@
       <div class="footer-top">
         <div class="footer-col">
           <a href="index.html" class="nav-logo">
-            <span class="logo-main">Brij Vila</span>
-            <span class="logo-sub">Jaisalmer</span>
+            <span class="logo-main">Hotel Brij Villa</span>
           </a>
           <p class="footer-tagline">
             A luxury sanctuary crafted from Jaisalmer’s iconic golden sandstone. Experience timeless royal hospitality in the heart of the Thar Desert.
           </p>
           <div class="footer-social">
-            <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/brijvilla_jaisalmer?igsh=MWw5ZTd3NH1va2M3cA==" class="social-btn contact-app-link" data-contact="instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/918769878788" class="social-btn contact-app-link" data-contact="whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/share/1Bj2ftABbc/" class="social-btn contact-app-link" data-contact="facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           </div>
         </div>
 
@@ -316,7 +362,7 @@
           <h5>Contact Us</h5>
           <div class="contact-item">
             <i class="fa-solid fa-location-dot" style="margin-top: 3px;"></i>
-            <span>Near Sunset Point, Sam Road, Jaisalmer, Rajasthan 345001</span>
+            <span>Back Side Bhatia Mukti Dham, Near Parihar Hospital, Geeta Ashram Road, Jaisalmer, Rajasthan - 345001</span>
           </div>
           <div class="contact-item">
             <i class="fa-solid fa-phone" style="margin-top: 3px;"></i>
@@ -324,13 +370,13 @@
           </div>
           <div class="contact-item">
             <i class="fa-solid fa-envelope" style="margin-top: 3px;"></i>
-            <a href="mailto:info@Brijvilajaisalmer.com">info@Brijvilajaisalmer.com</a>
+            <a href="mailto:brijvillajaisalmer@gmail.com" class="contact-app-link" data-contact="email">brijvillajaisalmer@gmail.com</a>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Brij Vila Jaisalmer. All Rights BOOK NOW.</p>
+        <p>&copy; 2026 Hotel Brij Villa Jaisalmer. All Rights Reserved.</p>
         <div class="footer-links">
           <a href="./privacy.html">Privacy Policy</a>
           <a href="./terms.html">Terms of Service</a>
@@ -347,6 +393,8 @@
       item.classList.toggle('active');
     }
   </script>
+  <script src="contact-links.js" defer></script>
+  <script src="mobile-nav.js" defer></script>
 
 </body>
 </html>

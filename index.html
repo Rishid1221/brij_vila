@@ -34,16 +34,16 @@
       {
         "@context": "https://schema.org",
         "@type": "Hotel",
-        "name": "The Brij Villa",
+        "name": "Hotel Brij Villa",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Near Sunset Point, Sam Road",
+          "streetAddress": "Back Side Bhatia Mukti Dham, Near Parihar Hospital, Geeta Ashram Road",
           "addressLocality": "Jaisalmer",
           "addressRegion": "Rajasthan",
           "postalCode": "345001",
           "addressCountry": "IN"
         },
-        "telephone": ["+917042671269", "+919837052274"],
+        "telephone": ["+918769878788"],
         "foundingDate": "2010",
         "description": "Premium luxury hotel and boutique stay in Jaisalmer, Rajasthan.",
         "amenityFeature": [
@@ -65,6 +65,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     
     <!-- Lenis Smooth Scroll CDN -->
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
@@ -85,13 +86,12 @@
   />
   <div class="logo-text-group">
     <span class="logo-main">Brij Villa</span>
-      <!-- <span class="logo-sub">Jaisalmer, Rajasthan</span> -->
   </div>
 </a>
       
       <ul class="nav-links">
         <li><a href="./about.html">About</a></li>
-        <li><a href="./rooms.html">Rooms & Suites</a></li>
+        <li><a href="./rooms.html">Rooms & Services</a></li>
         <li><a href="./gallery.html">Gallery</a></li>
         <li><a href="./explore.html">Explore Jaisalmer</a></li>
         <li><a href="./contact.html">Contact</a></li>
@@ -107,12 +107,12 @@
     <!-- Mobile Nav -->
     <div class="nav-mobile" id="mobileNav">
       <button class="nav-close" id="navClose">✕</button>
-      <a href="#about" class="mob-link">About</a>
-      <a href="#rooms" class="mob-link">Rooms</a>
-      <a href="#gallery" class="mob-link">Gallery</a>
-      <a href="#amenities" class="mob-link">Amenities</a>
-      <a href="#location" class="mob-link">Location</a>
-      <a href="#contact" class="mob-link">Book Now</a>
+      <a href="./index.html" class="mob-link">Home</a>
+      <a href="./about.html" class="mob-link">About Us</a>
+      <a href="./rooms.html" class="mob-link">Rooms & Services</a>
+      <a href="./explore.html" class="mob-link">Explore Jaisalmer</a>
+      <a href="./gallery.html" class="mob-link">Gallery</a>
+      <a href="./contact.html" class="mob-link">Contact</a>
     </div>
 
     <!-- ============================================================
@@ -133,12 +133,11 @@
   <!-- Content Layer -->
   <div class="hero-content">
     <div class="hero-eyebrow">
-      <span>Luxury Stay · Jaisalmer, Rajasthan</span>
+      <span>Luxury Stay · </span>
     </div>
 
     <!-- Villa Name Prominently Featured in Main H1 -->
     <h1 class="hero-title">
-      <span class="hero-brand-name">The Brij Villa</span>
       <span class="hero-tagline">Where Serenity Meets <em>Royalty</em></span>
     </h1>
 
@@ -230,14 +229,17 @@
   <div class="rooms-left">
   <div class="section-eyebrow"><div class="line"></div><span>Our Rooms</span></div>
   <h2 class="section-title">Stay in Spaces Crafted<br>for <em>Comfort & Luxury</em></h2>
-  <p class="rooms-text">Every room at Brij Villa is thoughtfully designed to offer a peaceful stay with elegant interiors, modern amenities and warm Brij hospitality.</p>
+  <p class="rooms-text">Every room at Brij Villa is thoughtfully designed to offer a peaceful stay — where elegant interiors, modern amenities, and warm Brij hospitality come together in the heart of Jaisalmer.</p>
+  <p class="rooms-text">From hand-finished sandstone details and sunlit comfort to quiet evenings after desert adventures, each sanctuary is shaped for couples, families, and discerning travellers who value both heritage charm and refined ease.</p>
   <div class="room-nav">
-  <button class="room-nav-item active">01 Deluxe Room</button>
-  <button class="room-nav-item">02 Super Deluxe Room</button>
+  <!-- <button class="room-nav-item active" data-room="room1" type="button">01 Deluxe Room</button>
+  <button class="room-nav-item" data-room="room2" type="button">02 Super Deluxe Room</button> -->
   </div>
   </div>
 
   <div class="rooms-right">
+  <div class="home-rooms-slider" id="homeRoomsSlider">
+  <div class="home-rooms-track" id="homeRoomsTrack">
   <article class="room-showcase" id="room1">
   <div class="room-image"><img src="images/delux.jpeg" alt=""></div>
   <div class="room-content">
@@ -367,6 +369,18 @@
 
   </div>
   </article>
+  </div>
+  <div class="home-rooms-controls" aria-label="Room slider navigation">
+  <button type="button" class="home-room-slider-btn prev" id="homeRoomPrev" aria-label="Previous room">
+  <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+  <span>Previous</span>
+  </button>
+  <button type="button" class="home-room-slider-btn next" id="homeRoomNext" aria-label="Next room">
+  <span>Next</span>
+  <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+  </button>
+  </div>
+  </div>
 
   </div>
 
@@ -378,6 +392,31 @@
 
   </section>
 
+
+
+  <section id="home-counter" class="home-counter" aria-label="Brij Villa statistics">
+    <div class="home-counter-inner">
+      <div class="home-counter-item">
+        <span class="home-counter-num" data-count="51" data-suffix="+">0</span>
+        <span class="home-counter-label">Total Rooms</span>
+      </div>
+      <div class="home-counter-divider" aria-hidden="true"></div>
+      <div class="home-counter-item">
+        <span class="home-counter-num" data-count="15" data-suffix="+">0</span>
+        <span class="home-counter-label">Years of Experience</span>
+      </div>
+      <div class="home-counter-divider" aria-hidden="true"></div>
+      <div class="home-counter-item">
+        <span class="home-counter-num" data-count="500" data-suffix="+">0</span>
+        <span class="home-counter-label">Guests Capacity</span>
+      </div>
+      <div class="home-counter-divider" aria-hidden="true"></div>
+      <div class="home-counter-item">
+        <span class="home-counter-num" data-count="4.9" data-decimals="1" data-suffix=" ★">0</span>
+        <span class="home-counter-label">Guest Rating</span>
+      </div>
+    </div>
+  </section>
 
 
   <section id="facilities">
@@ -710,7 +749,7 @@
 
         <div style="text-align: center; margin-top: 3rem" class="reveal">
           <a
-            href="https://wa.me/917042671269?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20wedding%20bookings%20at%20The%20Amar%20Resort"
+            href="https://wa.me/918769878788?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20wedding%20bookings%20at%20Hotel%20Brij%20Villa"
             target="_blank"
             rel="noopener"
             class="btn-primary"
@@ -817,8 +856,8 @@
     <!-- Instagram CTA -->
     <p class="gallery-note reveal" style="margin-top: 1.5rem;">
         📸 Follow us on Instagram
-        <a href="https://www.instagram.com/Brij_vila" target="_blank" rel="noopener" style="color: var(--gold, #9f875c); text-decoration: none; font-weight: 600;">
-            @Brijvila
+        <a href="https://www.instagram.com/brijvilla_jaisalmer?igsh=MWw5ZTd3NH1va2M3cA==" target="_blank" rel="noopener" style="color: var(--gold, #9f875c); text-decoration: none; font-weight: 600;">
+            @brijvilla_jaisalmer
         </a>
         for more glimpses of the Brij Vila experience
     </p>
@@ -1001,14 +1040,8 @@
           </div>
 
           <div class="location-phones reveal reveal-delay-4">
-            <a href="tel:+917042671269" class="phone-link">
+            <a href="tel:+918769878788" class="phone-link">
               <span class="ph-icon">📞</span> +91 8769878788
-            </a>
-            <a href="tel:+919837052274" class="phone-link">
-              <span class="ph-icon">📞</span> +91 98370 52274
-            </a>
-            <a href="tel:+918077005303" class="phone-link">
-              <span class="ph-icon">📞</span> +91 80770 05303
             </a>
           </div>
 
@@ -1025,7 +1058,7 @@
               🗺️ Get Directions
             </a>
             <a
-              href="https://wa.me/917042671269"
+              href="https://wa.me/918769878788"
               target="_blank"
               rel="noopener"
               class="btn-whatsapp"
@@ -1160,8 +1193,8 @@
             <div class="contact-cards reveal reveal-delay-2">
                 
                 <!-- Primary Call Card -->
-                <a href="tel:+917042671269" class="contact-card">
-                    <div class="cc-icon">📞</div>
+                <a href="tel:+918769878788" class="contact-card">
+                    <div class="cc-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
                     <div class="cc-info">
                         <span class="label">Call / Reservations</span>
                         <span class="value">+91 8769878788</span>
@@ -1169,8 +1202,8 @@
                 </a>
 
                 <!-- WhatsApp Card -->
-                <a href="https://wa.me/917042671269" target="_blank" rel="noopener" class="contact-card">
-                    <div class="cc-icon">💬</div>
+                <a href="https://wa.me/918769878788" class="contact-card contact-app-link" data-contact="whatsapp">
+                    <div class="cc-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></div>
                     <div class="cc-info">
                         <span class="label">WhatsApp Enquiry</span>
                         <span class="value">Message us directly</span>
@@ -1178,11 +1211,11 @@
                 </a>
 
                 <!-- Instagram Card -->
-                <a href="https://www.instagram.com/Brij_vila" target="_blank" rel="noopener" class="contact-card">
-                    <div class="cc-icon">📸</div>
+                <a href="https://www.instagram.com/brijvilla_jaisalmer?igsh=MWw5ZTd3NH1va2M3cA==" class="contact-card contact-app-link" data-contact="instagram">
+                    <div class="cc-icon"><i class="fa-brands fa-instagram" aria-hidden="true"></i></div>
                     <div class="cc-info">
                         <span class="label">Instagram</span>
-                        <span class="value">@Brij_vila</span>
+                        <span class="value">@brijvilla_jaisalmer</span>
                     </div>
                 </a>
 
@@ -1192,12 +1225,9 @@
             <div class="location-box reveal reveal-delay-3">
                 <p class="location-text">
                     <strong class="location-heading">📍 Visit Us</strong>
-                    Brij Vila, Fort Road / Sunset Point Area,<br />
-                    Jaisalmer – 345001, Rajasthan, India
+                    Back Side Bhatia Mukti Dham, Near Parihar Hospital,<br />
+                    Geeta Ashram Road, Jaisalmer, Rajasthan - 345001
                 </p>
-                <a href="https://maps.google.com/?q=Jaisalmer+Rajasthan" target="_blank" rel="noopener" class="map-link">
-                    Open in Google Maps &rarr;
-                </a>
             </div>
         </div>
 
@@ -1275,7 +1305,7 @@
                     Thank you for reaching out. Your enquiry has been received and our team at Brij Vila will connect with you shortly.
                 </p>
                 <p style="margin-top: 1.5rem">
-                    <a href="tel:+917042671269" class="btn-primary" style="display: inline-flex">
+                    <a href="tel:+918769878788" class="btn-primary" style="display: inline-flex">
                         Call +91 8769878788 Now
                     </a>
                 </p>
@@ -1284,6 +1314,41 @@
 
     </div>
 </section>
+
+    <!-- ============================================================
+     GOOGLE MAP SECTION
+     ============================================================ -->
+    <section class="home-map-section" id="find-us" aria-labelledby="home-map-heading">
+      <div class="home-map-inner">
+        <div class="section-eyebrow home-map-eyebrow">
+          <div class="line"></div>
+          <span>FIND US</span>
+        </div>
+        <h2 class="home-map-title" id="home-map-heading">Experience Hotel Brij Villa in Jaisalmer</h2>
+        <a
+          href="https://www.google.com/maps/search/?api=1&amp;query=Back+Side+Bhatia+Mukti+Dham,+Near+Parihar+Hospital,+Geeta+Ashram+Road,+Jaisalmer,+Rajasthan+-+345001"
+          class="home-map-address contact-app-link"
+          data-contact="maps"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Back Side Bhatia Mukti Dham, Near Parihar Hospital, Geeta Ashram Road, Jaisalmer, Rajasthan - 345001
+        </a>
+        <div class="home-map-wrapper">
+          <iframe
+            src="https://maps.google.com/maps?q=Back+Side+Bhatia+Mukti+Dham,+Near+Parihar+Hospital,+Geeta+Ashram+Road,+Jaisalmer,+Rajasthan+-+345001&amp;output=embed"
+            width="100%"
+            height="580"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Hotel Brij Villa location on Google Maps">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
     <!-- ============================================================
      FOOTER
      ============================================================ -->
@@ -1293,17 +1358,15 @@
             
             <!-- Brand Column -->
             <div class="footer-brand">
-                <span class="logo-main">Brij Vila</span>
-                <span class="logo-sub">Boutique Heritage Resort · Jaisalmer</span>
+                <span class="logo-main">Hotel Brij Villa</span>
                 <p class="footer-tagline">
                     Experience royal Rajasthani hospitality amidst golden sandstone architecture and breathtaking desert views.
                 </p>
                 <div class="footer-social">
                     <a
-                        href="https://www.instagram.com/Brij_vila"
-                        target="_blank"
-                        rel="noopener"
-                        class="social-btn"
+                        href="https://www.instagram.com/brijvilla_jaisalmer?igsh=MWw5ZTd3NH1va2M3cA=="
+                        class="social-btn contact-app-link"
+                        data-contact="instagram"
                         aria-label="Instagram"
                     >
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -1311,10 +1374,9 @@
                         </svg>
                     </a>
                     <a
-                        href="https://wa.me/917042671269"
-                        target="_blank"
-                        rel="noopener"
-                        class="social-btn"
+                        href="https://wa.me/918769878788"
+                        class="social-btn contact-app-link"
+                        data-contact="whatsapp"
                         aria-label="WhatsApp"
                     >
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -1322,7 +1384,7 @@
                         </svg>
                     </a>
                     <a
-                        href="tel:+917042671269"
+                        href="tel:+918769878788"
                         class="social-btn"
                         aria-label="Call Us"
                     >
@@ -1363,19 +1425,23 @@
                 <h5>Contact Info</h5>
                 <div class="contact-item">
                     <span class="ci-icon">📍</span>
-                    <span>Brij Vila, Fort Road / Sunset Point Area, Jaisalmer – 345001, Rajasthan, India</span>
+                    <span>Back Side Bhatia Mukti Dham, Near Parihar Hospital, Geeta Ashram Road, Jaisalmer, Rajasthan - 345001</span>
                 </div>
                 <div class="contact-item">
                     <span class="ci-icon">📞</span>
-                    <a href="tel:+917042671269">+91 8769878788</a>
+                    <a href="tel:+918769878788">+91 8769878788</a>
                 </div>
                 <div class="contact-item">
                     <span class="ci-icon">💬</span>
-                    <a href="https://wa.me/917042671269" target="_blank" rel="noopener">WhatsApp Chat</a>
+                    <a href="https://wa.me/918769878788" class="contact-app-link" data-contact="whatsapp">WhatsApp Chat</a>
                 </div>
                 <div class="contact-item">
                     <span class="ci-icon">📸</span>
-                    <a href="https://www.instagram.com/Brij_vila" target="_blank" rel="noopener">@Brij_vila</a>
+                    <a href="https://www.instagram.com/brijvilla_jaisalmer?igsh=MWw5ZTd3NH1va2M3cA==" class="contact-app-link" data-contact="instagram">@brijvilla_jaisalmer</a>
+                </div>
+                <div class="contact-item">
+                    <span class="ci-icon">✉️</span>
+                    <a href="mailto:brijvillajaisalmer@gmail.com" class="contact-app-link" data-contact="email">brijvillajaisalmer@gmail.com</a>
                 </div>
             </div>
 
@@ -1384,7 +1450,7 @@
         <!-- Footer Bottom Bar -->
         <div class="footer-bottom">
             <p class="footer-copy">
-                © 2026 Brij Vila Jaisalmer. All Rights BOOK NOW.
+                © 2026 Hotel Brij Villa Jaisalmer. All Rights Reserved.
             </p>
             <div class="footer-links">
                 <a href="./privacy.html">Privacy Policy</a>
@@ -1399,34 +1465,22 @@
     <!-- Floating Action Buttons -->
     <div class="floating-cta">
       <a
-        href="https://wa.me/917042671269?text=Hello%20The%20Amar%20Resort!%20I%27d%20like%20to%20make%20an%20enquiry."
-        target="_blank"
-        rel="noopener"
+        href="https://wa.me/918769878788?text=Hello%20Hotel%20Brij%20Villa!%20I%27d%20like%20to%20make%20an%20enquiry."
         class="fab fab-wa"
         title="Chat on WhatsApp"
+        aria-label="Chat on WhatsApp"
       >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
-          />
-        </svg>
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        <span class="fab-label">WhatsApp</span>
       </a>
-      <a href="tel:+917042671269" class="fab fab-phone" title="Call Now">
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path
-            d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l.46-.46a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
-          />
-        </svg>
+      <a href="tel:+918769878788" class="fab fab-phone" title="Call Now" aria-label="Call Now">
+        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+        <span class="fab-label">Call</span>
       </a>
     </div>
 
+    <script src="contact-links.js" defer></script>
+    <script src="rooms.js" defer></script>
     <script src="script.js" defer></script>
   </body>
 </html>
