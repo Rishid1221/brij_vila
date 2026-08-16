@@ -767,7 +767,33 @@ section {
   box-shadow: 0 30px 80px rgba(26, 24, 21, 0.2);
 }
 
-.about-img-accent {
+@media (max-width: 768px) {
+    #about .about-visual {
+        width: 100%;
+        min-height: auto;
+        height: auto;
+        display: block;
+        margin-bottom: 40px;
+    }
+
+    #about .about-img-main {
+        width: 100%;
+        height: 380px;
+        aspect-ratio: auto;
+        background-image: url("./images/jaisalmerfort.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 2px;
+        display: block;
+    }
+
+    #about .about-img-accent {
+        display: none;
+    }
+}
+
+/* .about-img-accent {
   position: absolute;
   width: 55%;
   aspect-ratio: 3/2;
@@ -778,7 +804,7 @@ section {
   right: -2.5rem;
   border: 6px solid var(--cream);
   box-shadow: 0 20px 50px rgba(26, 24, 21, 0.15);
-}
+} */
 
 .about-badge {
   position: absolute;
@@ -3225,7 +3251,6 @@ footer .logo-sub {
     line-height: 1.7;
     margin: 18px 0 22px;
 }
-
 .footer-social {
     display: flex;
     gap: 12px;
@@ -3245,12 +3270,49 @@ footer .logo-sub {
     transition: all 0.3s ease;
 }
 
-.social-btn:hover {
-    background: var(--gold, #B88A3B);
-    color: #ffffff;
-    transform: translateY(-3px);
+/* Instagram */
+.footer-social .social-btn[data-contact="instagram"] {
+    color: #E1306C;
 }
 
+.footer-social .social-btn[data-contact="instagram"]:hover {
+    background: #E1306C;
+    border-color: #E1306C;
+    color: #ffffff;
+}
+
+/* WhatsApp */
+.footer-social .social-btn[data-contact="whatsapp"] {
+    color: #25D366;
+}
+
+.footer-social .social-btn[data-contact="whatsapp"]:hover {
+    background: #25D366;
+    border-color: #25D366;
+    color: #ffffff;
+}
+
+/* Facebook */
+.footer-social .social-btn[data-contact="facebook"] {
+    color: #1877F2;
+}
+
+.footer-social .social-btn[data-contact="facebook"]:hover {
+    background: #1877F2;
+    border-color: #1877F2;
+    color: #ffffff;
+}
+
+/* Call */
+.footer-social .social-btn[href^="tel:"] {
+    color: #25D366;
+}
+
+.footer-social .social-btn[href^="tel:"]:hover {
+    background: #25D366;
+    border-color: #25D366;
+    color: #ffffff;
+}
 .footer-col h5 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.3rem;
@@ -4307,4 +4369,98 @@ nav,
   text-align: center;
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.85rem;
+}
+
+
+
+
+
+
+/* ===== Contact Cards Brand Themes ===== */
+
+/* Call / Reservations */
+.contact-card:first-child {
+    background: rgba(37, 211, 102, 0.16);
+    border: 1px solid rgba(37, 211, 102, 0.45);
+}
+
+.contact-card:first-child .cc-icon {
+    background: rgba(37, 211, 102, 0.20);
+    color: #20b957;
+}
+
+/* WhatsApp */
+.contact-card[data-contact="whatsapp"] {
+    background: rgba(37, 211, 102, 0.16);
+    border: 1px solid rgba(37, 211, 102, 0.45);
+}
+
+.contact-card[data-contact="whatsapp"] .cc-icon {
+    background: rgba(37, 211, 102, 0.20);
+    color: #20b957;
+}
+
+/* Instagram */
+.contact-card[data-contact="instagram"] {
+    background: rgba(225, 48, 108, 0.14);
+    border: 1px solid rgba(225, 48, 108, 0.40);
+}
+
+.contact-card[data-contact="instagram"] .cc-icon {
+    background: rgba(225, 48, 108, 0.18);
+    color: #e1306c;
+}
+
+/* Facebook */
+.contact-card[data-contact="facebook"] {
+    background: rgba(24, 119, 242, 0.14);
+    border: 1px solid rgba(24, 119, 242, 0.40);
+}
+
+.contact-card[data-contact="facebook"] .cc-icon {
+    background: rgba(24, 119, 242, 0.18);
+    color: #1877f2;
+}
+
+
+/* .contact-card[data-contact="whatsapp"] .cc-icon {
+    color: #25D366;
+}
+
+.contact-card[data-contact="instagram"] .cc-icon {
+    color: #E4405F;
+}
+
+.contact-card[data-contact="facebook"] .cc-icon {
+    color: #1877F2;
+    .contact-card:first-child .cc-icon {
+    color: #25D366;
+}
+} */
+
+
+
+
+/* Footer Social Brand Colors */
+
+.footer-social .social-btn[data-contact="instagram"] {
+    color: #E1306C;
+    border-color: rgba(225, 48, 108, 0.35);
+}
+
+.footer-social .social-btn[data-contact="whatsapp"] {
+    color: #25D366;
+    border-color: rgba(37, 211, 102, 0.35);
+}
+
+/* Call button */
+.footer-social .social-btn[href^="tel:"] {
+    color: #25D366;
+    border-color: rgba(37, 211, 102, 0.35);
+}
+
+/* Facebook */
+.footer-social .social-btn[data-contact="facebook"] {
+    color: #1877F2;
+    border-color: rgba(24, 119, 242, 0.35);
 }

@@ -703,3 +703,98 @@ body.luxury-contact-page {
     font-size: 2.4rem;
   }
 }
+
+/* =========================================================
+   FOOTER SOCIAL ICON — BRAND COLORS
+   ========================================================= */
+
+.footer-social .social-btn[data-contact="whatsapp"] {
+  color: #25D366;
+  border-color: rgba(37, 211, 102, 0.45);
+}
+
+.footer-social .social-btn[data-contact="whatsapp"]:hover {
+  background: #25D366;
+  color: #fff;
+  border-color: #25D366;
+}
+
+
+.footer-social .social-btn[data-contact="instagram"] {
+  color: #E1306C;
+  border-color: rgba(225, 48, 108, 0.45);
+}
+
+.footer-social .social-btn[data-contact="instagram"]:hover {
+  background: #E1306C;
+  color: #fff;
+  border-color: #E1306C;
+}
+
+
+.footer-social .social-btn[data-contact="facebook"] {
+  color: #1877F2;
+  border-color: rgba(24, 119, 242, 0.45);
+}
+
+.footer-social .social-btn[data-contact="facebook"]:hover {
+  background: #1877F2;
+  color: #fff;
+  border-color: #1877F2;
+}
+
+
+/* =========================================================
+   CONTACT CONNECT ICONS — BRAND COLORS
+   ========================================================= */
+
+/* WhatsApp */
+.contact-connect-icon[data-contact="whatsapp"] .connect-icon-circle {
+  color: #25D366;
+  border-color: rgba(37, 211, 102, 0.35);
+}
+
+.contact-connect-icon[data-contact="whatsapp"]:hover .connect-icon-circle {
+  background: #25D366;
+  border-color: #25D366;
+  color: #ffffff;
+}
+
+
+/* Instagram */
+.contact-connect-icon[data-contact="instagram"] .connect-icon-circle {
+  color: #E1306C;
+  border-color: rgba(225, 48, 108, 0.35);
+}
+
+.contact-connect-icon[data-contact="instagram"]:hover .connect-icon-circle {
+  background: #E1306C;
+  border-color: #E1306C;
+  color: #ffffff;
+}
+
+
+/* Gmail */
+.contact-connect-icon[data-contact="email"] .connect-icon-circle {
+  color: #EA4335;
+  border-color: rgba(234, 67, 53, 0.35);
+}
+
+.contact-connect-icon[data-contact="email"]:hover .connect-icon-circle {
+  background: #EA4335;
+  border-color: #EA4335;
+  color: #ffffff;
+}
+
+
+/* Google Maps / Location */
+.contact-connect-icon[data-contact="maps"] .connect-icon-circle {
+  color: #4285F4;
+  border-color: rgba(66, 133, 244, 0.35);
+}
+
+.contact-connect-icon[data-contact="maps"]:hover .connect-icon-circle {
+  background: #4285F4;
+  border-color: #4285F4;
+  color: #ffffff;
+}
