@@ -438,7 +438,7 @@ section {
 
 .img-wrapper img {
   width: 100%;
-  height: 100%;
+  height: 90%;
   object-fit: cover;
   display: block;
   transition: var(--transition);
@@ -446,7 +446,7 @@ section {
 
 .main-img {
   width: 85%;
-  height: 480px;
+  height: 400px;
 }
 
 .floating-img {
@@ -1226,3 +1226,80 @@ footer .logo-sub {
   color: #fff;
   border-color: #1877F2;
 } 
+
+
+
+/* About Story - Main Hotel Image */
+.about-story .main-img.video-wrapper {
+  width: 85%;
+  height: 450px !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+}
+
+.about-story .main-img.video-wrapper img {
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover;
+  display: block;
+}
+
+/* ================================
+   ABOUT STORY - MOBILE FIX
+================================ */
+
+@media (max-width: 768px) {
+
+  .about-story {
+    width: 100%;
+    max-width: 100%;
+    padding: 55px 22px 60px;
+    overflow: hidden;
+  }
+
+  .about-story .story-grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+  }
+
+  .about-story .story-images {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-story .main-img,
+  .about-story .main-img.video-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 330px !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+  }
+
+  .about-story .main-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    display: block;
+  }
+
+  .about-story .story-text {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .about-story .story-text h2 {
+    font-size: 2.6rem;
+    line-height: 1.08;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+
+  .about-story .story-text p {
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+}
