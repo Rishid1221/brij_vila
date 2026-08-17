@@ -760,8 +760,8 @@ section {
 
 .about-img-main {
   width: 100%;
-  aspect-ratio: 4/5;
-  background: url("./images/jaisalmerfort.jpg")
+  aspect-ratio: 5/5;
+  background: url("./images/hotelfront.png")
     center/cover no-repeat;
   border-radius: 2px;
   box-shadow: 0 30px 80px rgba(26, 24, 21, 0.2);
@@ -778,7 +778,7 @@ section {
 
     #about .about-img-main {
         width: 100%;
-        height: 380px;
+        height: 250px;
         aspect-ratio: auto;
         background-image: url("./images/jaisalmerfort.jpg");
         background-size: cover;
